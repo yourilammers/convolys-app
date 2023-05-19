@@ -1,0 +1,33 @@
+default_context:
+  _pegasus_version: '2023.5'
+  author_name: Youri
+  ci: github_actions
+  css_framework: bootstrap
+  css_theme: default
+  database: postgres
+  deploy_platform: digital_ocean_app_platform
+  description: Get more out of conversations
+  domain_name: convolys.nl
+  email: yoyouriboy@gmail.com
+  enable_google_login: y
+  enable_twitter_login: y
+  front_end_framework: htmx
+  post_process: n
+  project_name: Convolys
+  project_slug: convolys-app
+  stripe_payment_mode: checkout
+  subscription_billing_model: default
+  use_2fa: y
+  use_api_keys: y
+  use_cloud_media_storage: n
+  use_debug_toolbar: y
+  use_docker: y
+  use_examples: y
+  use_impersonation: y
+  use_openai: n
+  use_sentry: y
+  use_subscriptions: y
+  use_teams: y
+  use_teams_example: y
+  use_translations: y
+  use_wagtail: n
