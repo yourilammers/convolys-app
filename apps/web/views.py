@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _
 from apps.teams.decorators import login_and_team_required
 
 
-def home(request):
+def landing(request):
     if request.user.is_authenticated:
         team = request.team
         if team:

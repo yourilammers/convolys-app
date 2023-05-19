@@ -1,5 +1,148 @@
-{% extends "web/base.html" %}
+{% extends "web/landing_base.html" %}
 {% load static %}
+
 {% block body %}
-  {% include 'web/components/hero.html' %}
+    <main>
+        <!-- Add your main content here -->
+        <section id="hero">
+            <div class="main-container">
+                <div class="hero">
+                    <h5 class="hero_starter">convolys - audio analyse</h5>
+                    <h1 class="hero_title">Haal meer uit gesprekken, verhoog de effectiviteit van je organisatie</h1>
+                    <h4 class="hero_text">Geautomatiseerde transcriptie en gedetailleerde analyse voor een duurzame en toekomstbestendige organisatie.</h4>
+                    <div class="hero-btn">
+                        <a style="margin-top:20px;" class="landing-button-large">Vraag een proefperiode aan</a>
+                    </div>
+                    <img src="{% static 'landing/img/gallery/callcenter-dashboard.png' %}" width:100%>
+                </div>
+            </div>
+        </section>
+
+        <section id="chatbot">
+            <div class="section-container">
+                <div class="row" style="width:100%;">
+                    <div class="col-7">
+                        <img src="{% static 'landing/img/gallery/chatbot.png' %}" style="width:100%;">
+                    </div>
+                    <div class="col-5" style="height:100%;">
+                        <div class="vertically-centered-text">
+                            <h5 class="section_starter">convolys gespreksintelligentie</h5>
+                            <h1 class="section_title">Ontdek de baanbrekende AI-chatbot van convolys, gebouwd op GPT-3.5</h1>
+                            <h4 class="section_text">Chat met uw gesprekstranscripties zoals u doet met chatGPT. Chat met slechts 1 gesprek, of met alle gesprekken van vorig jaar.</h4>                    
+                            <a style="margin-top:20px;" class="landing-button-large">Start trial </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="new-meetings" style="display:none;">
+            <div class="section-container">
+                <div class="row" style="width:100%;">
+
+                    <div class="col-5" style="height:100%;">
+                        <div class="vertically-centered-text">
+                            <h5 class="section_starter">Made to be easy</h5>
+                            <h1 class="section_title">Easily convolyse and summarize your meetings by yourself in minutes.</h1>
+                            <h4 class="section_text">We have specifically designed summarization profiles for your sector which leads to high quality results.</h4>                    
+                            <a style="margin-top:20px;" class="landing-button-large">Start trial </a>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <img src="{% static 'landing/img/gallery/new-meeting.png' %}" style="width:100%;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trusted-by" style="background-color: #081d34;">
+            <div class="section-container" style="padding-bottom:60px;">
+                <div class="row" style="width:100%; text-align: center;">
+                    <h5 class="trusted-title">convolys is speciaal gemaakt voor industrieën met een hoge inzet.</h5>
+                    <button class="rounded-button">Voor vragen kunt u contact met ons opnemen --></button>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section id="why-convolys" style="margin-top:100px; margin-bottom:100px;">
+            <div class="section-container">
+                <div class="row" style="width:100%;">
+                    <div style="text-align: center; margin-bottom:20px;" >
+                        <h1 class="section_title">Waarom bedrijven convolys nodig hebben</h1>
+                    </div>
+                    <div class="col-4">
+                        <div class="row">
+                            <img class="check-mark" src="{% static 'landing/img/icons/check-mark.svg' %}" alt="check" width="35" height="35"/>
+                            <h1 class="features_title">Zeer nauwkeurige transcriptie</h1>
+                            <h4 class="features_text">Onze audio transcriptie service maakt gebruik van de meest geavanceerde Large Language modellen en hanteert daarbij betaalbare tarieven.</h4>
+                        </div>         
+                        <div class="row" style="margin-top:40px;">
+                            <img class="check-mark" src="{% static 'landing/img/icons/check-mark.svg' %}" alt="check" width="35" height="35"/>
+                            <h1 class="features_title">Samenvatten en rapporteren</h1>
+                            <h4 class="features_text">Onze dienst genereert ongelooflijk gedetailleerde kwantitatieve en kwalitatieve inzichten in gesprekken. </h4>
+                        </div>         
+                    </div>
+                    <div class="col-4">
+                        <div class="row">
+                            <img class="check-mark" src="{% static 'landing/img/icons/check-mark.svg' %}" alt="check" width="35" height="35"/>
+                            <h1 class="features_title">AI-gestuurde audio-intelligentie</h1>
+                            <h4 class="features_text">Wij gebruiken GPT3- en GPT4-modellen om onze audio-intelligentie aan te drijven, zodat onze klanten hun transcripties gemakkelijker kunnen doorzoeken en analyseren.</h4>
+                        </div>          
+                        <div class="row" style="margin-top:40px;">
+                            <img class="check-mark" src="{% static 'landing/img/icons/check-mark.svg' %}" alt="check" width="35" height="35"/>
+                            <h1 class="features_title">Chatbot-functionaliteit</h1>
+                            <h4 class="features_text">Wij bieden de mogelijkheid om te chatten met enkelvoudige of meerdere eerdere gesprekken om uw geheugen op te frissen en nieuwe inzichten te verkrijgen.</h4>
+                        </div>            
+                    </div>
+                    <div class="col-4">
+                        <div class="row">
+                            <img class="check-mark" src="{% static 'landing/img/icons/check-mark.svg' %}" alt="check" width="35" height="35"/>
+                            <h1 class="features_title">hoge schaalbaarheid</h1>
+                            <h4 class="features_text">Onze systemen zijn gebouwd op geavanceerde AWS-pijplijntechnologieën en bieden een hoge beschikbaarheid en uitstekende rekenkracht.</h4>
+                        </div>          
+                        <div class="row" style="margin-top:40px;">
+                            <img class="check-mark" src="{% static 'landing/img/icons/check-mark.svg' %}" alt="check" width="35" height="35"/>
+                            <h1 class="features_title">Gegevensbeveiliging en privacy</h1>
+                            <h4 class="features_text">Klantvertrouwen en gegevensbeveiliging zijn voor ons van het grootste belang, en we nemen alle nodige maatregelen om ervoor te zorgen dat onze dienst voldoet aan de GDPR- en HIPAA-voorschriften.</h4>
+                        </div>           
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="light-blue-container" style="background-color:#c4e0fd;">
+            <div class="footer_container" style="padding: 4% 4% 100px 4%;">
+                <div class="row">
+                    <div class="col-5" style="height:100%;">
+                        <div class="vertically-centered-text">
+                            <h4 class="footer_text">"Bij convolys geloven we dat technologie ontworpen moet zijn om het leven van mensen makkelijker te maken. Onze dienst gaat niet alleen over het omzetten van audio naar tekst, het gaat over het helpen om tijd en moeite te besparen zodat u zich kunt richten op wat echt belangrijk is." - Youri</h4>   
+                            <h5 class="section_starter" style="margin-top:20px;">Gemaakt voor bedrijven</h5>            
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <img src="{% static 'landing/img/gallery/youri-photo.png' %}" style="width:70%; float:right;">
+                    </div>
+                </div>
+            </div>
+        </div>
+            <svg class="curved-footer" width="1440" height="200" viewBox="0 0 1440 84" fill="none" preserveAspectRatio="none"><path d="M0 83C454.33-24.774 928.696-27.898 1384.99 71.96L1440 83v2H0Z"></path></svg>
+            <div class="footer_container" style="margin-bottom:100px;">
+            <div class="row" style="width:100%;">
+                <div class="footer_box">
+                    <h1 class="footer_title">Kom in contact voor meer informatie</h1>
+                    <button class="rounded-button">Voor vragen kunt u contact met ons opnemen --></button>
+                    <br/><br/>
+                    <p style="color:white">convolys is een onderneming van Denderoo |  KvK: 76668991 | BTW: NL0034155B75 </p>     
+                </div>
+            </div>
+        </div>
+        </div>
+          
+    </footer>
+
 {% endblock %}
+							
