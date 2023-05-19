@@ -1,0 +1,68 @@
+{% extends 'web/app/dashboard_load.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="content" style="padding:0 0 0 0">
+  <h2 class="mb-2 lh-sm">Getting Started</h2>
+  <div class="card shadow-none border border-300 my-4" data-component-card="data-component-card">
+    <div class="card-header p-4 border-bottom border-300 bg-soft">
+      <div class="row g-3 justify-content-between align-items-center">
+        <div class="col-12 col-md">
+          <h4 class="text-900 mb-0" data-anchor="data-anchor">Quick start</h4>
+        </div>
+      </div>
+    </div>
+    <div class="card-body p-0">
+      <div class="p-4 code-to-copy">
+        <p class="mb-0">Welcome to our website! We are excited to have you here and help you get started.
+
+          To begin, you can set up <code>your first meeting</code>. This will allow you to connect with other users and start collaborating. You can also explore our features and customize your experience.
+          
+          We have a variety of tools to help you get the most out of your experience. You can create meetings, transcriptions and summaries/ reporting. Additinoally, you can use our <code>convolys chatbot</code> to ask any questions you want about your own meeting transcriptions.
+          
+          We also have a variety of resources to help you get started. You can find tutorials, FAQs, and other helpful information.
+          
+          We hope you enjoy your time here and find everything you need to get started.</p>
+      </div>
+    </div>
+  </div>
+  <div class="card shadow-none border border-300 my-4" data-component-card="data-component-card">
+    <div class="card-header p-4 border-bottom border-300 bg-soft">
+      <div class="row g-3 justify-content-between align-items-center">
+        <div class="col-12 col-md">
+          <h4 class="text-900 mb-0" data-anchor="data-anchor">Setting up your first meeting</h4>
+        </div>
+      </div>
+    </div>
+    <div class="card-body p-0">
+      <div class="p-4 code-to-copy">
+        <p class="mb-0">
+          <ul>
+            <li>Go to the convolys website</li>
+            <li>Log in to your account</li>
+            <li>Explore the “Documentation” tab</li>
+            <li>Explore the “Getting Started” tab</li>
+            <li>Click on the “New Meeting” tab</li>
+            <li>Enter the meeting details, such as the meeting name, date, and time</li>
+            <li>Add participants to the meeting</li>
+            <li>Click “Publish Meeting” start the transcription</li>
+          </ul>
+          </p>
+      </div>
+    </div>
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+      <div class="toast align-items-center text-white bg-dark border-0 light" id="icon-copied-toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body p-3"></div>
+          <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+{% endblock %}         

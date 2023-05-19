@@ -5,7 +5,13 @@ from . import views
 
 app_name = 'web'
 urlpatterns = [
+    path('landing', views.landing, name='landing'),
     path('', views.landing, name='landing'),
+    path('home', views.home, name='home'),
+    path('dashboard_changelog', views.dashboard_changelog, name='dashboard_changelog'),
+    path('dashboard_getting_started', views.dashboard_getting_started, name='dashboard_getting_started'),
+
+    
     path('terms/', TemplateView.as_view(template_name="web/terms.html"), name='terms'),
     path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain"), name='robots.txt'),
     # these views are just for testing error pages

@@ -1,0 +1,43 @@
+{% extends 'web/app/dashboard_load.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="container-small" id="pricing" style="margin-top:100px;">
+  <div class="row">
+    <div class="col-12 mb-4 text-center text-sm-start">
+      <h2>Contact</h2>
+    </div>
+    <div class="col-lg-8 text-center text-sm-start">
+        <p class="mb-7">Bij vragen of voorstellen kunt u ons altijd bereiken.</p>
+        <form class="row g-4" method="post">
+            {% csrf_token %}
+            <div class="col-12">
+                <input class="form-control bg-white" type="text" name="name" value="{{ user.first_name }}" placeholder="Name" required="required" />
+            </div>
+            <div class="col-12">
+                <input class="form-control bg-white" type="email" name="email" value="{{ user.email }}" placeholder="Email" required="required" />
+            </div>
+            <div class="col-12">
+                <textarea class="form-control bg-white" rows="6" name="message" placeholder="Message" required="required"></textarea>
+            </div>
+            <div class="col-12 d-grid">
+                <button class="btn btn-outline-success" name="stuur-een-bericht" type="submit">Verstuur</button>
+            </div>
+            <div class="feedback"></div>
+        </form>
+
+        {% if bericht_ontvangen %}
+        <p class="alert-convolys alert-success-convolys">Bericht ontvangen!</p>
+        {% endif %}
+    
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+ 
+  </body>
+{% endblock %}

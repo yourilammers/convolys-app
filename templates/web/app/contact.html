@@ -1,0 +1,129 @@
+{% extends 'web/app/dashboard_load.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="container-small" id="pricing" style="margin-top:100px;">
+  <div class="row">
+    <div class="col-12 mb-4 text-center text-sm-start">
+      <h4 class="text-success fw-bolder mb-3">Abonnement</h4>
+      <h2>Prijsplannen: convolys voor bedrijfsmeetings</h2>
+    </div>
+    <div class="col-lg-8 text-center text-sm-start">
+      <p>Wij bieden een reeks prijsplannen voor elk bedrijf, van kleine teams tot grote ondernemingen. Maak een schatting uw gebruiksbehoeftes, en vind uw perfecte plan.</p>
+    
+    </div>
+
+  </div>
+  <div class="row" style="margin-top:40px;">
+    <div class="col-lg-4 col-md-12 mb-4">
+      <div class="card card1 h-100">
+        <div class="card-body">
+         
+          <h5 class="card-title">Uitproberen</h5>
+          <small class='text-muted'>Iedereen</small>
+          <br><br>
+          <span class="h2">Gratis</span>
+          <br><br>
+          <div class="d-grid my-3">
+            <button class="btn btn-outline-dark btn-block">Selecteer</button>
+          </div>
+          <ul>
+            <li>1 audiobestand convolyseren</li>
+            <li>maximaal 1 uur</li>
+            <li>spreker onderscheiding</li>
+            <li>Automatische rapportage</li>
+            
+          </ul>
+        </div>
+
+        
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-12 mb-4">
+      <div class="card card2 h-100">
+        <div class="card-body">
+         
+          <h5 class="card-title">Standaard</h5>
+          <small class='text-muted'>Kleine bedrijven</small>
+          <br><br>
+          <span class="h2">€199</span>/maand
+          <br><br>
+          <div class="d-grid my-3">
+            <button class="btn btn-outline-dark btn-block">Selecteer</button>
+          </div>
+          <ul>
+            <li>20 uur audio /maand</li>
+            <li>maximale bestandsgrootte: 1gb</li>
+            <li>spreker onderscheiding</li>
+            <li>Automatische rapportage</li>
+          </ul>
+        </div>
+
+        
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-12 mb-4">
+      <div class="card card3 h-100">
+        <div class="card-body">
+         
+          <h5 class="card-title">Premium</h5>
+          <small class='text-muted'>Groot bedrijf</small>
+          <br><br>
+          <span class="h2">€399</span>/maand
+          <br><br>
+          <div class="d-grid my-3">
+            <button class="btn btn-outline-dark btn-block">Select</button>
+          </div>
+          <ul>
+            <li>50 uur audio /maand</li>
+            <li>maximale bestandsgrootte: 1gb</li>
+            <li>spreker onderscheiding</li>
+            <li>Automatische rapportage</li>
+            
+          </ul>
+        </div>
+
+        
+      </div>
+    </div>
+  </div>   
+  <p class="mb-5">Heeft uw bedrijf grotere behoeften? Neem dan <a href="#contact">contact</a> met ons op.</p> 
+</div>
+</div>
+
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="../../vendors/popper/popper.min.js"></script>
+    <script src="../../vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="../../vendors/anchorjs/anchor.min.js"></script>
+    <script src="../../vendors/is/is.min.js"></script>
+    <script src="../../vendors/fontawesome/all.min.js"></script>
+    <script src="../../vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="../../vendors/list.js/list.min.js"></script>
+    <script src="../../vendors/feather-icons/feather.min.js"></script>
+    <script src="../../vendors/dayjs/dayjs.min.js"></script>
+    <script src="../../assets/js/phoenix.js"></script>
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="{% static 'landing/vendors/popper/popper.min.js' %}"></script>
+    <script src="{% static 'landing/vendors/bootstrap/bootstrap.min.js' %}"></script>
+    <script src="{% static 'landing/vendors/anchorjs/anchor.min.js' %}"></script>
+    <script src="{% static 'landing/vendors/is/is.min.js' %}"></script>
+    <script src="{% static 'landing/vendors/fontawesome/all.min.js' %}"></script>
+    <script src="{% static 'landing/vendors/lodash/lodash.min.js' %}"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="{% static 'landing/vendors/list.js/list.min.js' %}"></script>
+    <script src="{% static 'landing/vendors/feather-icons/feather.min.js' %}"></script>
+    <script src="{% static 'landing/vendors/dayjs/dayjs.min.js' %}"></script>
+    <script src="{% static 'landing/vendors/choices/choices.min.js' %}"></script>
+    <script src="{% static 'landing/vendors/echarts/echarts.min.js' %}"></script>
+    <script src="{% static 'landing/vendors/dhtmlx-gantt/dhtmlxgantt.js' %}"></script>
+    <script src="{% static 'landing/assets/js/phoenix.js' %}"></script>
+    <script src="{% static 'landing/assets/js/projectmanagement-dashboard.js' %}"></script>
+  </body>
+{% endblock %}

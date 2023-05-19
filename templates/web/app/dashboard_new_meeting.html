@@ -1,0 +1,315 @@
+{% extends 'web/app/dashboard_load.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="content" style="padding:0 0 0 0">
+  <form class="mb-9" id="upload-form" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+
+      <div class="row justify-content-between align-items-end g-3 mb-5">
+        <div class="col-12 col-sm-auto col-xl-8">
+          <h2>Create a Meeting</h2>
+        </div>
+        <div class="col-12 col-sm-auto col-xl-4">
+          <div class="d-flex">
+            <button type="submit" name="verwijder" class="btn btn-phoenix-danger px-5 me-2">Delete</button>
+            <button type="submit" name="upload&start" class="btn btn-primary px-5 w-100 text-nowrap" onclick="clearFileInput()">Publish meeting</button>
+          </div>
+        </div>
+      </div>
+      <div class="row g-5">
+        <div class="col-xl-8">
+          <h4 class="fs-1 mb-4">Meeting Details</h4>
+          <div class="row g-3">
+
+            <!-- Upload and display-->
+            <div class="col-sm-6 col-md-12">
+              <!--class = -->
+              <label class="custom-file-upload" style="float:left;">
+                <input type="file" id="audio-file-input" name="audio_file" accept="audio/*" onchange="displayFileInfo()" />
+                <i class="fas fa-cloud-upload-alt" style="padding-right:8px;"></i>Choose an audio file
+              </label>
+            <audio id="audio-player" class ="audio_player" controls></audio>
+
+            </div>
+
+
+            <div class="col-sm-6 col-md-12">
+              <div class="form-floating">
+                <input class="form-control" id="floatingEventInput" type="text" placeholder="Event title">
+                <label for="floatingEventInput">Meeting title</label>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div class="form-floating">
+                <select class="form-select" id="floatingSelectTask">
+                  <option disabled selected>Select meeting type</option>
+                  <option value="1">Financial statement review</option>
+                  <option value="2">Budget planning</option>
+                  <option value="3">Auditing review</option>
+                  <option value="4">Tax planning</option>
+                  <option value="5">Internal controls review</option>
+                </select>
+                
+                <label for="floatingSelectTask">type</label>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div class="form-floating">
+                <select class="form-select" id="floatingSelectPrivacy">
+                  <option disabled selected>Select meeting topic</option>
+                  <option value="1">Revenue recognition</option>
+                  <option value="2">Expense management</option>
+                  <option value="3">Risk assessment</option>
+                  <option value="4">Financial reporting</option>
+                  <option value="5">Taxation</option>
+                </select>
+                
+                <label for="floatingSelectPrivacy">topic</label>
+              </div>
+            </div>
+            <div class="col-12 mt-4">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" id="inlineRadio1" type="radio" name="inlineRadioOptions" value="option1" checked="checked">
+                <label class="form-check-label" for="inlineRadio1">Transcription</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" id="inlineRadio2" type="radio" name="inlineRadioOptions" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Reporting</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" id="inlineRadio3" type="radio" name="inlineRadioOptions" value="option3">
+                <label class="form-check-label" for="inlineRadio3">Both</label>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-12 mt-md-0 mt-lg-1">
+              <div class="form-floating">
+                <input class="form-control" id="floatingVenueInput" type="text" placeholder="Venue">
+                <label for="floatingVenueInput">Location</label>
+              </div>
+            </div>
+            <h4 class="fs-1 mt-7">Participants</h4>
+            <div class="col-sm-6 col-md-6">
+              <div class="form-floating">
+                <select class="form-select" id="floatingSelectTask">
+                  <option disabled selected>Number of speakers</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="5">6</option>
+                </select>
+                
+                <label for="floatingSelectTask">speakers</label>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div class="form-floating">
+                <input class="form-control" id="floatingOrganizersInput" type="text" placeholder="ORGANIZERS">
+                <label for="floatingOrganizersInput">Company</label>
+              </div>
+            </div>
+
+            <div class="col-12 gy-6">
+              <div class="form-floating">
+                <textarea class="form-control" id="floatingProjectDescription" placeholder="Leave a comment here" style="height: 128px"></textarea>
+                <label for="floatingProjectDescription">Notes</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4">
+
+          <div class="row g-3 mb-3">
+            <!-- Error message -->
+            {% if error_message %}
+            <div class="col-12">
+              <div class="card-body position-relative" style="padding:20px 2px 2px 2px !important;">
+                
+                <div id="error-message" style="display: {% if error_message %}block{% else %}none{% endif %};">
+                  {{ error_message }} <button type="button" onclick="hideErrorMessage()">x</button>
+                </div>
+                
+                <script>
+                  function hideErrorMessage() {
+                    document.getElementById("error-message").style.display = "none";
+                  }
+                </script>
+              </div>
+              
+            </div>
+            {% endif %}
+            <!-- End error message -->
+            <div class="col-12">
+              <label class="form-label" for="inputState1">File size: </label> <span id="file-size">...</span>
+            </div>
+          </div>
+          <div class="row g-3 mb-3">
+            <div class="col-12">
+              <label class="form-label" for="inputState1">File type: </label> <span id="file-type">...</span>
+            </div>
+          </div>
+          <div class="row g-3 mb-3">
+            <div class="col-12">
+              <label class="form-label" for="inputState1">Audio duration: </label> <span id ="audio-duration">...</span>
+            </div>
+          </div>
+          <div class="row g-3 mb-3">
+            <div class="col-12">
+              <label class="form-label" for="inputState1">File name: </label> <span id="file-name">...</span>
+            </div>
+          </div>
+                               
+          
+
+          <h4 class="fs-1 mb-4">Privacy</h4>
+          <div class="form-check mb-4">
+            <input class="form-check-input" id="exampleRadios1" type="radio" name="exampleRadios" value="option1" checked="checked">
+            <label class="form-check-label fw-normal" for="exampleRadios1">Share with my organization</label>
+          </div>
+          <div class="form-check mb-8">
+            <input class="form-check-input" id="exampleRadios2" type="radio" name="exampleRadios" value="option2">
+            <label class="form-check-label fw-normal" for="exampleRadios2">Limit access to only  myself</label>
+          </div>
+
+          <h4 class="fs-1 mb-">Tag meeting</h4>
+          <div class="row g-3 mb-3">
+            <div class="col-12 gy-6">
+              <label class="form-label" for="inputState1">Type</label>
+              <select class="form-select" id="inputState1">
+                <option value="">Choose...</option>
+                <option value="">Type One</option>
+                <option value="">Type Two</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    
+  </form>
+
+    
+
+
+
+
+
+      
+      <!-- ********************************************************************************************* -->
+      <!--      Upload section                                                                     -->
+      <!-- ********************************************************************************************* -->
+      
+      <div class="row g-3" style="padding-top:30px; padding-right:0px; height:100%;">
+        <div class="col-xl-6 col-lg-12" height=100%>
+
+          
+          <div class="container-models-dashboard" style="padding-top:40px; margin:0px;">
+
+              
+                  
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          
+          
+          <div id="loading-popup" style="display: none;">
+            <div class="loading-message">
+              <p>We are currently working on your request:</p>
+              <ul>
+                <li>Converting audio files...</li>
+                <li>Creating database entries...</li>
+              </ul>
+              <p>Expected load time:</p>
+              <div class="progress-bar">
+                <div class="progress"></div>
+              </div>
+              <p class="time-remaining">Calculating...</p>
+            </div>
+          </div>
+          
+          
+          <script>
+            function displayFileInfo() {
+              //file-name
+              const fileInput = document.getElementById('audio-file-input');
+              const fileName = document.getElementById('file-name');
+              const fullFileName = fileInput.files[0].name;
+              const fileBasename = fullFileName.split('.')[0];
+              const extension = fullFileName.split('.')[1];
+              const filetype = document.getElementById('file-type');
+              filetype.textContent = extension;
+              fileName.textContent = fileBasename;
+              
+              // file-size
+              const fileSize = document.getElementById('file-size');
+              const file = fileInput.files[0];
+              const fileSizeInBytes = file.size;
+              const fileSizeInMB = fileSizeInBytes / (1024*1024);
+              fileSize.textContent = `${fileSizeInMB.toFixed(2)} MB`;
+              
+              // audio duration
+              const audio = new Audio();
+              audio.src = URL.createObjectURL(file);
+              audio.addEventListener('loadedmetadata', () => {
+                const duration = audio.duration;
+                const audioDuration = document.getElementById('audio-duration');
+                audioDuration.textContent = `${(duration/60).toFixed(0)} minuten`;
+                
+                $(document).ready(function() {
+                  $('form').submit(function() {
+                    // Show loading popup
+                    
+                    var expected_load_time = duration * 0.10;
+                    $('#loading-popup').show();
+                    $('.progress').animate({width: '100%'}, expected_load_time * 1000, function() {
+                    });
+                    $(window).on('load', function() {
+                      $('#loading-popup').hide();
+                      $('#success-message').show();
+                    });
+                  });
+                });
+                
+                
+                
+                const audioPlayer = document.getElementById("audio-player");
+                // Set the audio player source to the selected file
+                audioPlayer.src = URL.createObjectURL(file);
+                URL.revokeObjectURL(audio.src);
+              });
+            }
+            
+            
+            function clearFileInput() {
+              const fileInput = document.getElementById('audio-file-input');
+              fileInput.value = '';
+            }
+          </script>
+          
+          
+          <div class="col-1"></div>
+          
+          
+          <!-- ********************************************************************************************* -->
+          <!--      Display section                                                                    -->
+          <!-- ********************************************************************************************* -->
+          
+
+      </div>
+      
+      
+      <script>
+        function clearFileInput() {
+          document.getElementById("fileInput").value = "";
+        }
+      </script> 
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}         

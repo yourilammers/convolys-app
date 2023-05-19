@@ -29,6 +29,17 @@ env.read_env(os.path.join(BASE_DIR,  ".env"))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY', default='wKfMFKPGpOUAALbjhlIkPyYjqHcPqIwZrpkZXiej')
+OPENAI_API_KEY = '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'
+WRITESONIC_API_KEY = '9a098af0-06f3-4b2c-80d1-e10d80d73fd4'
+DEEPL_API_KEY = 'c277a4e2-1aac-ca3f-4812-6dc92373ddb0'
+PEXELS_API_KEY = '563492ad6f91700001000001478a4c79df5a4c91a24e7b3eb0d0fdaa'
+DIGITAL_OCEAN_API_KEY = 'dop_v1_93176e1f362196983d0d7bac3040dfb86e32c407c8e4ce898f40623cff802b59'
+
+DO_SPACES_KEY = 'DO0077HYTARFRJEJ4BGF'
+DO_SECRET_KEY = 'hehrv1YV2xocgP0YDNqGPRS2wY8ZAQR/vBGl9arYdSM'
+
+
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -86,6 +97,7 @@ PROJECT_APPS = [
     'apps.web',
     'apps.teams.apps.TeamConfig',
     'apps.teams_example.apps.TeamsExampleConfig',
+    'apps.tools', 
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PEGASUS_APPS + PROJECT_APPS

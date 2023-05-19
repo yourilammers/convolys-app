@@ -41,6 +41,9 @@ team_urlpatterns = [
 ]
 
 urlpatterns = [
+    # custom apps
+    path('tools/', include('apps.tools.urls')),
+
     # redirect Django admin login to main login page
     path('admin/login/', RedirectView.as_view(pattern_name='account_login')),
     path('admin/', admin.site.urls),

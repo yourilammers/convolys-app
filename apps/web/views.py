@@ -34,3 +34,38 @@ def team_home(request, team_slug):
 
 def simulate_error(request):
     raise Exception('This is a simulated error.')
+
+
+def home(request):
+    return render(request, 'web/app/dashboard_home.html', context={
+        'error_message': "error_message",
+    })
+
+
+def landing(request):
+    if request.method == 'POST':
+        if 'stuur-een-bericht' in request.POST:
+            name = request.POST.get('name')
+            email = request.POST.get('email')
+            message = request.POST.get('message')
+            #new_Contact = Contact(name = name, email = email, message = message, subject = 'unkown')
+            #new_Contact.save()
+
+        elif 'abonneer' in request.POST:
+            email = request.POST.get('email')
+            #new_Contact = Contact(subject = 'email abonnee', email = email, name = 'unkown', message = 'abonneer')
+            #new_Contact.save()
+
+    return render(request, 'web/landing_page.html')
+
+
+def landing_prijzen(request):
+    return render(request, 'web/landing_page_prijzen.html')
+
+
+def dashboard_changelog(request):
+    return render(request, 'web/app/dashboard_changelog.html')
+   
+
+def dashboard_getting_started(request):
+    return render(request, 'web/app/dashboard_getting_started.html')
