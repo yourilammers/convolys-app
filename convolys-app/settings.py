@@ -367,7 +367,7 @@ if REDIS_URL.startswith('rediss'):
     REDIS_URL = f"{REDIS_URL}?ssl_cert_reqs=none"
 
 CELERY_BROKER_URL = CELERY_RESULT_BACKEND = REDIS_URL
-WAGTAILADMIN_BASE_URL = 'http://convolys.nl'
+WAGTAILADMIN_BASE_URL = 'http://localhost:8000'
 
 # Waffle config
 
@@ -378,7 +378,7 @@ WAFFLE_FLAG_MODEL = 'teams.Flag'
 # replace any values below with specifics for your project
 PROJECT_METADATA = {
     'NAME': gettext_lazy('Convolys'),
-    'URL': 'http://convolys.nl',
+    'URL': 'http://localhost:8000',
     'DESCRIPTION': gettext_lazy("Get more out of conversations"),
     'IMAGE': 'https://upload.wikimedia.org/wikipedia/commons/2/20/PEO-pegasus_black.svg',
     'KEYWORDS': 'SaaS, django',
