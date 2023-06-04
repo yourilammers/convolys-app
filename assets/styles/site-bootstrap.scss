@@ -6,13 +6,12 @@ $body-bg: hsl(0, 0%, 98%);
 
 // Bootstrap base file created via these instructions:
 // https://getbootstrap.com/docs/5.0/customize/sass/#importing
-:root {
-  --primary-text-emphasis-dark: #000000;
-}
+
 // Configuration
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variable-dark";
 @import "~bootstrap/scss/maps";
 @import "~bootstrap/scss/utilities";
 
@@ -58,8 +57,7 @@ $body-bg: hsl(0, 0%, 98%);
   --danger: #{$danger};
   --success: #{$success};
   --gray: #{$gray-500};
-  --primary-text-emphasis-dark: #{$gray-500};
-}
+ }
 
 // Pegasus
 @import "app/bootstrap/_all";
