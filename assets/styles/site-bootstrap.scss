@@ -7,7 +7,7 @@ $body-bg: hsl(0, 0%, 98%);
 // Bootstrap base file created via these instructions:
 // https://getbootstrap.com/docs/5.0/customize/sass/#importing
 :root {
-  --primary-text-emphasis-dark: #{$gray-500};
+  --primary-text-emphasis-dark: #000000;
 }
 // Configuration
 @import "~bootstrap/scss/functions";
