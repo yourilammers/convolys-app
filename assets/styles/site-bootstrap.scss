@@ -7,7 +7,7 @@ $body-bg: hsl(0, 0%, 98%);
 // Bootstrap base file created via these instructions:
 // https://getbootstrap.com/docs/5.0/customize/sass/#importing
 :root {
-  --primary-text-emphasis-dark: #{$primary-text-emphasis-dark};
+  --primary-text-emphasis-dark: #{$gray-500};
 }
 // Configuration
 @import "~bootstrap/scss/functions";
@@ -58,7 +58,7 @@ $body-bg: hsl(0, 0%, 98%);
   --danger: #{$danger};
   --success: #{$success};
   --gray: #{$gray-500};
-  --primary-text-emphasis-dark: #{$primary-text-emphasis-dark};
+  --primary-text-emphasis-dark: #{$gray-500};
 }
 
 // Pegasus
