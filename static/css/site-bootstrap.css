@@ -3,6 +3,7 @@
   \****************************************************************************************************************************/
 @charset "UTF-8";
 :root {
+  --primary-text-emphasis-dark:var(--bs-accordion-btn-color);
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -10336,3 +10337,4 @@ textarea.form-control-lg {
 .pg-ratio-3x2 {
   --bs-aspect-ratio: 66.6666%;
 }
+
